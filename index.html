@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Neon Friends Arena</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header><div class="logo">NEON <span>FRIENDS</span> ARENA</div><div id="conn">● CONNECTING</div></header>
+  <main id="lobby" class="screen">
+    <section class="hero"><h1>PLAY LOUD.<br><span>PLAY TOGETHER.</span></h1><p>Race or fight with 2–7 friends. Phones, keyboards and game controllers supported.</p></section>
+    <section class="panel">
+      <label>Your name</label><input id="name" maxlength="16" placeholder="Player name">
+      <div class="row"><button id="create" class="primary">CREATE ROOM</button><button id="join" class="secondary">JOIN ROOM</button></div>
+      <input id="code" maxlength="5" placeholder="ROOM CODE" class="code">
+      <div id="joinmsg" class="msg"></div>
+    </section>
+    <section id="room" class="panel hidden">
+      <div class="roomtop"><b>ROOM <strong id="roomCode">-----</strong></b><button id="copy">COPY CODE</button></div>
+      <div class="tabs"><button data-mode="racing" class="active">🏁 RACING</button><button data-mode="fighting">⚡ FIGHTING</button></div>
+      <div id="players"></div>
+      <div class="character"><label>Character</label><select id="char">
+        <option>VOLT</option><option>NOVA</option><option>BLAZE</option><option>FROST</option><option>RUSH</option><option>SHADOW</option><option>TITAN</option>
+      </select></div>
+      <div class="row"><button id="ready" class="secondary">READY</button><button id="start" class="primary">START GAME</button></div>
+      <small>Host any way you like with Node.js. Friends join using the same server address and room code.</small>
+    </section>
+  </main>
+  <canvas id="game" class="hidden"></canvas>
+  <div id="hud" class="hidden">
+    <div id="modeTitle"></div><div id="scoreboard"></div><button id="quit">QUIT</button>
+  </div>
+  <div id="touch" class="hidden">
+    <div class="stick"><span></span></div>
+    <div class="actions"><button data-key="a">A</button><button data-key="b">B</button><button data-key="x">X</button><button data-key="y">Y</button></div>
+  </div>
+  <div id="toast"></div>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="game.js"></script>
+</body>
+</html>

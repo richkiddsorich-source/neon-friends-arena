@@ -1,0 +1,15 @@
+{
+  "name": "neon-friends-arena",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A browser multiplayer racing and fighting party game for 4-7 friends.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "socket.io": "^4.8.1"
+  }
+}
